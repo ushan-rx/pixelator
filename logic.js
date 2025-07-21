@@ -72,4 +72,20 @@ imgFile.addEventListener("change", (e) => {
 scaleSlider.addEventListener("input", drawPixelImage);
 pixelSlider.addEventListener("input", drawPixelImage);
 
-);
+// document.getElementById("resetButton").addEventListener("click", () => {
+// 	imgFile.value = ""; // Reset the file input
+// 	displayFileName.textContent = "No file selected"; // Reset the file name display
+// 	canvas.width = 0; // Clear the canvas
+// 	canvas.height = 0; // Clear the canvas
+// 	scaleSlider.value = 100; // Reset scale slider
+// 	pixelSlider.value = 10; // Reset pixel slider
+// 	scaleValue.textContent = "100%"; // Reset scale value display
+// 	pixelValue.textContent = "10%"; // Reset pixel value display
+// });
+
+document.getElementById("saveBtn").addEventListener("click", () => {
+	const link = document.createElement("a");
+	link.download = "pixelated_image.png";
+	link.href = canvas.toDataURL("image/png");
+	link.click(); // Trigger the download
+});
