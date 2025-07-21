@@ -64,23 +64,4 @@ document.addEventListener("DOMContentLoaded", () => {
 	// initial + on resize
 	renderHero();
 	window.addEventListener("resize", renderHero);
-
-	// file input name display
-	const upload = document.getElementById("upload");
-	const fileName = document.getElementById("fileName");
-	upload.addEventListener("change", () => {
-		fileName.textContent = upload.files[0]?.name || "No file selected";
-	});
-
-	// slider labels
-	const pxSlider = document.getElementById("pixelSlider");
-	const pxValue = document.getElementById("pixelValue");
-	pxSlider.addEventListener("input", () => {
-		pxValue.textContent = pxSlider.value + "%";
-	});
-	const scSlider = document.getElementById("scaleSlider");
-	const scValue = document.getElementById("scaleValue");
-	scSlider.addEventListener("input", () => {
-		scValue.textContent = scSlider.value + "%";
-	});
 });

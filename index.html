@@ -16,7 +16,9 @@
       <div id="heroPixelArt"></div>
     </div>
   </header>
-
+  <p id="description">
+    Just upload an image and let pixelator do the magic!
+  </p>
   <section id="input_wrapper">
     <div id="file_div">
       <label for="upload" id="uploadLabel" title="Only PNG and JPEG images are supported">
@@ -28,7 +30,7 @@
 
     <div id="pixel_bar">
       <label for="pixelSlider">
-        Pixelate: <span id="pixelValue">100%</span>
+        Pixel Ratio: <span id="pixelValue">100%</span>
       </label>
       <input type="range" id="pixelSlider" min="4" max="140" value="32" />
     </div>
@@ -42,6 +44,7 @@
   </section>
   <section id="result_wrapper">
     <canvas id="canvas"></canvas>
+    <p id="resolution"></p>
     <button id="saveBtn">Save Image</button>
   </section>
 
