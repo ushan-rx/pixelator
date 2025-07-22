@@ -50,6 +50,7 @@ const drawPixelImage = () => {
 		0
 	)}px × ${newHeight.toFixed(0)}px`;
 
+	// Adjust canvas size for display
 	if (canvas.width > MAX_CANVAS_DISPLAY_WIDTH) {
 		const scaleFactor = MAX_CANVAS_DISPLAY_WIDTH / canvas.width;
 		canvas.style.width = Math.floor(canvas.width * scaleFactor) + "px";
