@@ -14,6 +14,9 @@ let originalWidth, originalHeight;
 
 let displayFileName = document.getElementById("fileName");
 
+const DISPLAY_WIDTH = document.documentElement.clientWidth;
+const MAX_CANVAS_DISPLAY_WIDTH = DISPLAY_WIDTH - DISPLAY_WIDTH * 0.3; // 30% margin
+
 // Function to draw the image on the canvas
 const drawPixelImage = () => {
 	if (!img.src || !img.complete) return;
@@ -46,6 +49,15 @@ const drawPixelImage = () => {
 	resolutionElement.textContent = `Resolution: ${newWidth.toFixed(
 		0
 	)}px × ${newHeight.toFixed(0)}px`;
+
+	if (canvas.width > MAX_CANVAS_DISPLAY_WIDTH) {
+		const scaleFactor = MAX_CANVAS_DISPLAY_WIDTH / canvas.width;
+		canvas.style.width = Math.floor(canvas.width * scaleFactor) + "px";
+		canvas.style.height = Math.floor(canvas.height * scaleFactor) + "px";
+	} else {
+		canvas.style.width = canvas.width + "px";
+		canvas.style.height = canvas.height + "px";
+	}
 };
 
 // Set the file name when a file is uploaded

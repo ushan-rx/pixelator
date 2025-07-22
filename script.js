@@ -1,4 +1,3 @@
-// script.js
 document.addEventListener("DOMContentLoaded", () => {
 	// 5x7 pixel patterns for "PIXELATOR"
 	const letterPatterns = {
