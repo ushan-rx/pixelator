@@ -43,7 +43,9 @@ const drawPixelImage = () => {
 
 	// Update resolution text
 	const resolutionElement = document.getElementById("resolution");
-	resolutionElement.textContent = `Resolution: ${newWidth}px × ${newHeight}px`;
+	resolutionElement.textContent = `Resolution: ${newWidth.toFixed(
+		0
+	)}px × ${newHeight.toFixed(0)}px`;
 };
 
 // Set the file name when a file is uploaded
@@ -72,18 +74,19 @@ imgFile.addEventListener("change", (e) => {
 scaleSlider.addEventListener("input", drawPixelImage);
 pixelSlider.addEventListener("input", drawPixelImage);
 
-// document.getElementById("resetButton").addEventListener("click", () => {
-// 	imgFile.value = ""; // Reset the file input
-// 	displayFileName.textContent = "No file selected"; // Reset the file name display
-// 	canvas.width = 0; // Clear the canvas
-// 	canvas.height = 0; // Clear the canvas
-// 	scaleSlider.value = 100; // Reset scale slider
-// 	pixelSlider.value = 10; // Reset pixel slider
-// 	scaleValue.textContent = "100%"; // Reset scale value display
-// 	pixelValue.textContent = "10%"; // Reset pixel value display
-// });
+document.getElementById("resetBtn").addEventListener("click", () => {
+	scaleSlider.value = 100; // Reset scale slider
+	pixelSlider.value = 100; // Reset pixel slider
+	scaleValue.textContent = "100%"; // Reset scale value display
+	pixelValue.textContent = "100%"; // Reset pixel value display
+	drawPixelImage(); // Redraw the image with default values
+});
 
 document.getElementById("saveBtn").addEventListener("click", () => {
+	if (!img.src || !img.complete) {
+		alert("Please upload an image first.");
+		return;
+	}
 	const link = document.createElement("a");
 	link.download = "pixelated_image.png";
 	link.href = canvas.toDataURL("image/png");

@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,37 +16,40 @@
     </div>
   </header>
   <p id="description">
-    Just upload an image and let pixelator do the magic!
+    Just upload your image and let pixelator do the magic!
   </p>
-  <section id="input_wrapper">
-    <div id="file_div">
-      <label for="upload" id="uploadLabel" title="Only PNG and JPEG images are supported">
-        Upload Image
-      </label>
-      <input type="file" id="upload" accept="image/png, image/jpeg" />
-      <p id="fileName">No file selected</p>
-    </div>
+  <div class="container">
+    <section id="input_wrapper">
+      <div id="file_div">
+        <label for="upload" id="uploadLabel" title="Only PNG and JPEG images are supported">
+          Upload Image
+        </label>
+        <input type="file" id="upload" accept="image/png, image/jpeg" />
+        <p id="fileName">No file selected</p>
+      </div>
 
-    <div id="pixel_bar">
-      <label for="pixelSlider">
-        Pixel Ratio: <span id="pixelValue">100%</span>
-      </label>
-      <input type="range" id="pixelSlider" min="4" max="140" value="32" />
-    </div>
+      <div id="pixel_bar">
+        <label for="pixelSlider">
+          Pixel Ratio: <span id="pixelValue">100%</span>
+        </label>
+        <input type="range" id="pixelSlider" min="4" max="140" value="32" />
+      </div>
 
-    <div id="size_bar">
-      <label for="scaleSlider">
-        Scale: <span id="scaleValue">100%</span>
-      </label>
-      <input type="range" id="scaleSlider" min="10" max="200" value="100" />
-    </div>
-  </section>
-  <section id="result_wrapper">
-    <canvas id="canvas"></canvas>
-    <p id="resolution"></p>
-    <button id="saveBtn">Save Image</button>
-  </section>
-
+      <div id="size_bar">
+        <label for="scaleSlider">
+          Scale: <span id="scaleValue">100%</span>
+        </label>
+        <input type="range" id="scaleSlider" min="10" max="200" value="100" />
+      </div>
+      <button id="resetBtn">Reset</button>
+      <p id="resolution"></p>
+      <button id="saveBtn">Save Image</button>
+    </section>
+    <section id="result_wrapper">
+      <canvas id="canvas"></canvas>
+      
+    </section>
+  </div>
   <script src="script.js"></script>
   <script src="logic.js"></script>
 </body>
