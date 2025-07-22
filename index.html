@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <title>Pixelator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div id="heroPixelArtWrapper">
+      <div id="heroPixelArt"></div>
+    </div>
+  </header>
+  <p id="description">
+    Just upload your image and let pixelator do the magic!
+  </p>
+  <div class="container">
+    <section id="input_wrapper">
+      <div id="file_div">
+        <label for="upload" id="uploadLabel" title="Only PNG and JPEG images are supported">
+          Upload Image
+        </label>
+        <input type="file" id="upload" accept="image/png, image/jpeg" />
+        <p id="fileName">No file selected</p>
+      </div>
+
+      <div id="pixel_bar">
+        <label for="pixelSlider">
+          Pixel Ratio: <span id="pixelValue">100%</span>
+        </label>
+        <input type="range" id="pixelSlider" min="4" max="140" value="32" />
+      </div>
+
+      <div id="size_bar">
+        <label for="scaleSlider">
+          Scale: <span id="scaleValue">100%</span>
+        </label>
+        <input type="range" id="scaleSlider" min="10" max="200" value="100" />
+      </div>
+      <button id="resetBtn">Reset</button>
+      <p id="resolution"></p>
+      <button id="saveBtn">Save Image</button>
+    </section>
+    <section id="result_wrapper">
+      <canvas id="canvas"></canvas>
+      
+    </section>
+  </div>
+  <footer class="footer">
+    <p class="footer-topic">
+      Made by <a href="https://github.com/ushan-rx" target="_blank">Ushan</a>
+    </p>
+    <p>
+      Note that the image processing happens in your browser. No data is sent to any server.
+    </p>
+  </footer>
+  <script src="script.js"></script>
+  <script src="logic.js"></script>
+</body>
+</html>

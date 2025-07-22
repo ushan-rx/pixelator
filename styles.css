@@ -1,0 +1,264 @@
+/* styles.css */
+body {
+	margin: 0;
+	font-family: sans-serif;
+	background-color: #111;
+	color: #fff;
+	text-align: center;
+}
+
+.container {
+	display: grid;
+	grid-template-rows: 1fr;
+	grid-template-columns: auto 1fr auto;
+	gap: 20px;
+	padding-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+	.container {
+		grid-template-rows: auto 1fr auto;
+		grid-template-columns: 1fr;
+	}
+}
+
+#heroPixelArtWrapper {
+	width: 60vw;
+	max-width: 520px;
+	margin: 0 auto;
+	padding: 32px 0;
+	background-color: #111;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.pixel-row {
+	display: flex;
+}
+
+.pixel {
+	background-color: #68d391;
+	animation: blink 1s ease infinite;
+}
+
+@keyframes blink {
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.3;
+	}
+}
+
+#description {
+	text-align: center;
+	color: #c7c3c3;
+	font-size: 1.5rem;
+	margin: 20px auto;
+	margin-top: 1rem;
+	max-width: 600px;
+}
+
+#input_wrapper {
+	margin: 0 1rem;
+	min-width: 180px;
+	padding: 20px 16px;
+	display: flex; /* Change to flex */
+	flex-direction: column; /* Stack children vertically */
+	gap: 48px; /* Consistent gap between elements */
+	border: #1f1f1f 1px solid;
+	border-radius: 6px;
+	height: fit-content; /* Only take up as much height as needed */
+}
+
+#result_wrapper {
+	border: #1f1f1f 1px solid;
+	border-radius: 6px;
+}
+
+@media (max-width: 768px) {
+	#input_wrapper {
+		margin: 0 1rem;
+		padding-bottom: 2rem;
+		width: auto;
+	}
+	#result_wrapper {
+		margin: 0 1rem;
+		padding: 20px 16px;
+	}
+}
+
+#file_div,
+#pixel_bar,
+#size_bar {
+	margin-bottom: 4px;
+}
+
+#upload {
+	cursor: pointer;
+	display: none;
+}
+
+#uploadLabel,
+#saveBtn,
+#resetBtn {
+	display: inline-block;
+	background-color: #4caf50;
+	color: white;
+	padding: 10px 20px;
+	font-size: 14px;
+	font-family: sans-serif;
+	font-weight: 600;
+	border: none;
+	border-radius: 6px;
+	cursor: pointer;
+	transition: background-color 0.2s ease;
+}
+
+#uploadLabel:hover {
+	background-color: #29d02f;
+}
+#saveBtn:hover {
+	background-color: #29d02f;
+}
+
+#resetBtn {
+	background-color: #f44336;
+}
+#resetBtn:hover {
+	background-color: #da1f1c;
+}
+
+label {
+	display: block;
+	color: #ddd;
+}
+
+input[type="file"],
+input[type="range"] {
+	width: 100%;
+}
+
+#fileName {
+	margin-top: 8px;
+	font-family: sans-serif;
+	font-size: 16px;
+	text-align: center;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #cccccc;
+}
+
+#canvas {
+	display: block;
+	margin: 10% auto;
+	background-color: #1f1f1f;
+	border: 1px dashed #444;
+	image-rendering: pixelated;
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+}
+
+#resolution {
+	color: #ccc;
+	font-size: 14px;
+	margin-top: -6px;
+	margin-bottom: -8px;
+}
+
+.footer {
+	width: 100%;
+	background-color: #111;
+	color: #9a9898;
+	padding: 10px 0;
+	font-size: 14px;
+	text-align: center;
+}
+
+.footer-topic {
+	margin: 0;
+	font-weight: 600;
+	color: #c4c4c4;
+}
+
+/* slider stylying */
+
+#pixelSlider,
+#scaleSlider {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 100%;
+	height: 8px;
+	background: #444;
+	border-radius: 3px;
+	outline: none;
+	transition: background 0.2s ease;
+}
+
+/* WebKit: thumb + track */
+#pixelSlider::-webkit-slider-runnable-track,
+#scaleSlider::-webkit-slider-runnable-track {
+	height: 8px;
+	background: #444;
+	border-radius: 3px;
+}
+#pixelSlider::-webkit-slider-thumb,
+#scaleSlider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 16px;
+	height: 16px;
+	margin-top: -4px;
+	background: #3cdb41; /* your green */
+	border-radius: 50%;
+	border: none;
+	cursor: pointer;
+}
+
+/* Firefox: thumb + track */
+#pixelSlider::-moz-range-track,
+#scaleSlider::-moz-range-track {
+	height: 8px;
+	background: #444;
+	border-radius: 3px;
+}
+#pixelSlider::-moz-range-thumb,
+#scaleSlider::-moz-range-thumb {
+	width: 16px;
+	height: 16px;
+	background: #3cdb41;
+	border-radius: 50%;
+	border: none;
+	cursor: pointer;
+}
+
+/* IE/Edge: track + fill + thumb */
+#pixelSlider::-ms-track,
+#scaleSlider::-ms-track {
+	height: 8px;
+	background: transparent;
+	border-color: transparent;
+	color: transparent;
+}
+#pixelSlider::-ms-fill-lower,
+#scaleSlider::-ms-fill-lower {
+	background: #3cdb41;
+	border-radius: 3px;
+}
+#pixelSlider::-ms-fill-upper,
+#scaleSlider::-ms-fill-upper {
+	background: #444;
+	border-radius: 3px;
+}
+#pixelSlider::-ms-thumb,
+#scaleSlider::-ms-thumb {
+	width: 16px;
+	height: 16px;
+	background: #3cdb41;
+	border: none;
+	border-radius: 50%;
+	cursor: pointer;
+	margin-top: 0; /* IE centers thumb differently */
+}
